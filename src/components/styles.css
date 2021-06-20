@@ -1,0 +1,19 @@
+.slot {
+  font-size: 10vw;
+  border-style: solid;
+
+}
+
+.slot-machine {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.slot-machine-table {
+  margin-left: auto;
+  margin-right: auto;
+}
