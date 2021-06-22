@@ -7,7 +7,8 @@ import Slot from './slot';
 // ACTIONS
 import { rollSlotMachine } from '../actions/index';
 // CSS
-import './styles.css';
+// import './styles.css';
+import styled from 'styled-components';
 
 function SlotMachine() {
   const slots = useSelector(state => state.slotMachineSlots);
@@ -16,6 +17,19 @@ function SlotMachine() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const SlotMachine = styled.div`
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  `;
+  const MachineTable = styled.table`
+    margin-left: auto;
+    margin-right: auto;
+  `;
 
   // GENERATE A UNIQUE KEY
   const id = () => {
@@ -40,9 +54,9 @@ function SlotMachine() {
   }
 
   return (
-    <div className="slot-machine">
+    <SlotMachine>
     <h1>SLOT MACHINE</h1>
-      <table className="slot-machine-table">
+      <MachineTable>
         <tbody>
           <tr>
             {slots.map((slot) =>{
@@ -50,7 +64,7 @@ function SlotMachine() {
             })}
           </tr>
         </tbody>
-      </table>
+      </MachineTable>
       <Button variant="primary"
         onClick={() => dispatch(rollSlotMachine(rollslots()))}
         >
@@ -67,7 +81,7 @@ function SlotMachine() {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </SlotMachine>
   );
 }
 

@@ -1,15 +1,21 @@
 import React,  { FC } from 'react';
-import './styles.css';
+
+import styled from 'styled-components';
 
 type SlotProps = {
   value: number,
 };
 
+const SlotNumber = styled.div`
+  font-size: 10vw;
+  border-style: solid;
+`;
+
 const Slot: FC<SlotProps> = ({ value }) => {
   return(
-    <div className="slot">
+    <SlotNumber>
       { value }
-    </div>
+    </SlotNumber>
   )
 }
 
